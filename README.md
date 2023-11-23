@@ -1,25 +1,33 @@
-Overview
-========
+# UK Retail Data Pipeline Project
 
-Welcome to Astronomer! This project was generated after you ran 'astro dev init' using the Astronomer CLI. This readme describes the contents of the project, as well as how to run Apache Airflow on your local machine.
+This project is an end-to-end Apache Airflow data pipeline set up using Astro CLI. 
+Data quality checks are completed with Soda while dbt is integrated so models can be run through Airflow and Cosmos interface.
+Data is ultimately loaded into GCS BigQuery for visualization using the Astro SDK.
 
-Project Contents
-================
+Project composed with aid from tutorial ["An end-to-end Airflow data pipeline with BigQuery, dbt Soda, and more"](https://www.youtube.com/watch?v=DzxtCxi4YaA&t=257s) by Marc Lamberti 
 
-Your Astro project contains the following files and folders:
+### Airflow DAGS Graph
 
-- dags: This folder contains the Python files for your Airflow DAGs. By default, this directory includes two example DAGs:
-    - `example_dag_basic`: This DAG shows a simple ETL data pipeline example with three TaskFlow API tasks that run daily.
-    - `example_dag_advanced`: This advanced DAG showcases a variety of Airflow features like branching, Jinja templates, task groups and several Airflow operators.
-- Dockerfile: This file contains a versioned Astro Runtime Docker image that provides a differentiated Airflow experience. If you want to execute other commands or overrides at runtime, specify them here.
-- include: This folder contains any additional files that you want to include as part of your project. It is empty by default.
-- packages.txt: Install OS-level packages needed for your project by adding them to this file. It is empty by default.
-- requirements.txt: Install Python packages needed for your project by adding them to this file. It is empty by default.
-- plugins: Add custom or community plugins for your project to this file. It is empty by default.
-- airflow_settings.yaml: Use this local-only file to specify Airflow Connections, Variables, and Pools instead of entering them in the Airflow UI as you develop DAGs in this project.
+![airflow_dags_1](project_images/airflow_img_1.png)
 
-Deploy Your Project Locally
-===========================
+![airflow_dags_2](project_images/airflow_img_2.png)
+
+![airflow_dags_3](project_images/airflow_img_3.png)
+
+
+### GCS Bucket and BigQuery Tables
+
+![gcs_bucket](project_images/gcs_bucket.png)
+
+![bigquery_tables](project_images/bigquery_tables.png)
+
+
+### Metadata Final Visualization
+
+![metadata_visualization](project_images/metadata_visualization.png)
+
+
+## Setting up an Astro CLI Airflow Project
 
 1. Start Airflow on your local machine by running 'astro dev start'.
 
@@ -38,12 +46,3 @@ Note: Running 'astro dev start' will start your project with the Airflow Webserv
 
 You should also be able to access your Postgres Database at 'localhost:5432/postgres'.
 
-Deploy Your Project to Astronomer
-=================================
-
-If you have an Astronomer account, pushing code to a Deployment on Astronomer is simple. For deploying instructions, refer to Astronomer documentation: https://docs.astronomer.io/cloud/deploy-code/
-
-Contact
-=======
-
-The Astronomer CLI is maintained with love by the Astronomer team. To report a bug or suggest a change, reach out to our support.
