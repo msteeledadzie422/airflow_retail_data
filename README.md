@@ -27,7 +27,7 @@ Project composed with aid from tutorial ["An end-to-end Airflow data pipeline wi
 ![metadata_visualization](project_images/metadata_visualization.png)
 
 
-## Setting up an Astro CLI Airflow Project
+### Setting up an Astro CLI Airflow Project
 
 1. Start Airflow on your local machine by running 'astro dev start'.
 
